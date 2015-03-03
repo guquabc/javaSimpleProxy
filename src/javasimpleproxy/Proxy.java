@@ -7,6 +7,7 @@ package javasimpleproxy;
 
 import java.net.*;
 import java.io.*;
+import java.util.concurrent.*;
 
 /**
  *
@@ -41,6 +42,7 @@ public class Proxy {
         }
 
         ServerSocket ss = new ServerSocket(listenPort);
+        Executor service=Executors.newCachedThreadPool();
 
         while (true) {
             Socket clientSocket = ss.accept();
@@ -55,8 +57,10 @@ public class Proxy {
             BufferedOutputStream outProxy = new BufferedOutputStream(proxySocket.getOutputStream());
 
             //System.out.println("connect proxy\n");
-            new Thread(new ThreadedHandler(clientIn, outProxy, clientSocket, proxySocket)).start();
-            new Thread(new ThreadedHandler(proxyIn, outClient, clientSocket, proxySocket)).start();
+            //new Thread(new ThreadedHandler(clientIn, outProxy, clientSocket, proxySocket)).start();
+            //new Thread(new ThreadedHandler(proxyIn, outClient, clientSocket, proxySocket)).start();
+            service.execute(new ThreadedHandler(clientIn, outProxy, clientSocket, proxySocket));
+            service.execute(new ThreadedHandler(proxyIn, outClient, clientSocket, proxySocket));
         }
     }
 }
@@ -93,7 +97,7 @@ class ThreadedHandler implements Runnable {
 
             //System.out.println("socket close\n");
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
 
             //System.out.println("1\n");
             try {
@@ -101,7 +105,7 @@ class ThreadedHandler implements Runnable {
                 s2.close();
             } catch (Exception e2) {
 
-                e2.printStackTrace();
+                //e2.printStackTrace();
 
                 //System.out.println("2\n");
             }
