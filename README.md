@@ -1,25 +1,28 @@
 JavaSimpleProxy
 ======
-·Ç³£¼òµ¥µÄ·­Ç½³ÌÐò¡£
-¹¤×÷Ô­Àí
+éžå¸¸ç®€å•çš„ç¿»å¢™ç¨‹åºã€‚
+å·¥ä½œåŽŸç†
 ------
-Õâ¸ö³ÌÐò²¢Ã»ÓÐÊµÏÖsocks´úÀí£¬socks´úÀíÓÉDante ( A free SOCKS server )À´Íê³É¡£
+è¿™ä¸ªç¨‹åºå¹¶æ²¡æœ‰å®žçŽ°socksä»£ç†ï¼Œsocksä»£ç†ç”±Dante ( A free SOCKS server )æ¥å®Œæˆã€‚
 
-Õâ¸ö³ÌÐòÖ»ÊÇ×ª·¢ä¯ÀÀÆ÷µÄ°üµ½Dante£¬ÓÉDanteÈ¥·ÃÎÊÍøÕ¾£¬ÔÙ°ÑDanteµÄ°ü×ª·¢¸øä¯ÀÀÆ÷¡£
+è¿™ä¸ªç¨‹åºåªæ˜¯è½¬å‘æµè§ˆå™¨çš„åŒ…åˆ°Danteï¼Œç”±DanteåŽ»è®¿é—®ç½‘ç«™ï¼Œå†æŠŠDanteçš„åŒ…è½¬å‘ç»™æµè§ˆå™¨ã€‚
 
-ÔÚ×ª·¢Ê±¶ÔÊý¾Ý½øÐÐÒì»ò¼ÓÃÜÀ´ÊµÏÖ·­Ç½¡£
+åœ¨è½¬å‘æ—¶å¯¹æ•°æ®è¿›è¡Œå¼‚æˆ–åŠ å¯†æ¥å®žçŽ°ç¿»å¢™ã€‚
 
-´úÂëºÜ¼òÂª£¬µ«ÊÇÈ·ÊµÄÜ¹¤×÷¡£
+ä»£ç å¾ˆç®€é™‹ï¼Œä½†æ˜¯ç¡®å®žèƒ½å·¥ä½œã€‚
 
-¡¡¡¡¡¡PC¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡VPS<br/>
-[¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡]¡¡¡¡¡¡¡¡[¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡]<br/>
-[ ¡¡ä¯ÀÀÆ÷ <-> Proxy.java¡¡]<---Ç½-->[¡¡Proxy.java<->Dante ]¡¡<----->¡¡ÍøÕ¾<br/>
-[¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡]¡¡¡¡¡¡¡¡[¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡]
-ÓÃ·¨
+ã€€ã€€ã€€PCã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€VPS<br/>
+[ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€]ã€€ã€€ã€€ã€€[ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€]<br/>
+[ ã€€æµè§ˆå™¨ <-> Proxy.javaã€€]<---å¢™-->[ã€€Proxy.java<->Dante ]ã€€<----->ã€€ç½‘ç«™<br/>
+[ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€]ã€€ã€€ã€€ã€€[ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€]
+ç”¨æ³•
 ------
-###ÔÚVPSÉÏ
+###åœ¨VPSä¸Š
     java javasimpleproxy.Proxy -s -l 30001 -p 30000
-ÔÚ¶Ë¿Ú30001¼àÌý£¬Á¬½Ó±¾µØDanteµÄ30000¶Ë¿Ú¡£
-###ÔÚPCÉÏ
+åœ¨ç«¯å£30001ç›‘å¬ï¼Œè¿žæŽ¥æœ¬åœ°Danteçš„30000ç«¯å£ã€‚
+
+    nohup java javasimpleproxy.Proxy -s -l 30001 -p 30000 &
+åŽå°è¿è¡Œ
+###åœ¨PCä¸Š
     java javasimpleproxy.Proxy -c 106.187.95.66 -l 7202  -p 30001
-ÔÚ¶Ë¿Ú7202¼àÌý£¬Á¬½Ó106.187.95.66µÄ30001¶Ë¿Ú¡£
+åœ¨ç«¯å£7202ç›‘å¬ï¼Œè¿žæŽ¥106.187.95.66çš„30001ç«¯å£ã€‚
